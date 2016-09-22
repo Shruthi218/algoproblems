@@ -14,19 +14,32 @@ class Node {
  
 
 
-public void BTreetoMirror(Node root)
+public void levelorder(Node root)
 {
 
-if(root==null)
-return;
+Queue<Node> q = new LinkedList<Node>();
+q.add(root);
 
-BTreetoMirror(root.left);
-BTreetoMirror(root.right);
-Node temp = root.left;
-root.left = root.right;
-root.right = temp;
+while(!q.isEmpty())
+{
 
+Node t = q.remove();
+System.out.println(t.data);
+if(t.left!=null)
+{
+
+q.add(t.left);
 }
+
+if(t.right!=null)
+{
+
+q.add(t.right);
+}
+}
+
+
+
 
 public void inorder(Node root)
 {
@@ -52,7 +65,7 @@ public void inorder(Node root)
         t.left.left = new Node(4);
         t.left.right = new Node(5);
         t.right.left = new Node(6);
-        t.BTreetoMirror(t);
+        t.levelorder(root);
         t.inorder(t);
         
     }
