@@ -10,7 +10,7 @@ class Node
 	}
 }
 
-class CountLeaf
+class LCA
 {
 	static Node root;
 
@@ -44,7 +44,7 @@ class CountLeaf
 	{
 		
 
-              CountLeaf a = new CountLeaf();
+              LCA a = new LCA();
               Node n1 = new Node(8);
               Node n2 = new Node(7);
               a.root = new Node(3);
